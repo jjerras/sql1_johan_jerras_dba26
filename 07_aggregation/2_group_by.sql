@@ -1,0 +1,18 @@
+SET PAGESIZE 100
+
+DESC system.computer_prices;
+
+SELECT * FROM computer_prices
+FETCH FIRST 5 ROWS ONLY;
+
+SELECT
+    os,
+    MEDIAN(PRICE) AS median_prices,
+    AVG (weight) AS avg_weight_kg
+
+FROM computer_prices
+WHERE release_year > 2023
+GROUP BY os
+ORDER BY median_prices DESC;
+
+EXIT
