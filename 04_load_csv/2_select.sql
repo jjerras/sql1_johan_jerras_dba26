@@ -1,11 +1,28 @@
+SET PAGESIZE 1000
 
-SET SQLFORMAT csv
-SET FEEDBACK OFF
+DESC system.salaries_sf;
 
-SELECT *
+-- give top 20 rows
+SELECT * FROM salaries_sf
+FETCH FIRST 20 ROWS ONLY;
+
+SELECT COUNT(*) FROM salaries_sf;
+
+-- picks out a few columns and paginate
+SELECT 
+    id,
+    employeename,
+    jobtitle,
+    totalpay,
+    status
 FROM salaries_sf
+OFFSET 20 ROWS FETCH NEXT 20 ROWS ONLY;
+    
+-- picks top x percent
+SELECT 
+    id, employeename, totalpaybenefits
+FROM salaries_sf
+FETCH FIRST .2 PERCENT ROWS ONLY;
 
-ORDER BY basepay DESC NULLS LAST 
-FETCH FIRST 5 ROWS ONLY;
 
 EXIT
