@@ -1,7 +1,0 @@
-DROP TABLE IF EXISTS salaries_sf;
-
-SET DATAFORMAT CSV;
-SET LOAD SCAN_ROWS 50000
-LOAD salaries_sf salaries.csv NEW;
-
-EXIT

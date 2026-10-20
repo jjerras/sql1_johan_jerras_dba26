@@ -1,3 +1,5 @@
+DECLARE
+  v_ctl CLOB := q'[
 LOAD DATA
 INFILE 'salaries.csv'
 APPEND INTO TABLE sf_salaries
@@ -18,3 +20,8 @@ TRAILING NULLCOLS
   agency,
   status
 )
+]';
+BEGIN
+  NULL;
+END;
+/
