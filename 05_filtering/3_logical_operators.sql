@@ -2,9 +2,11 @@ SET PAGESIZE 100
 
 DESC system.amazon;
 
+SELECT COUNT(*) FROM amazon WHERE category IS NULL;
+
 SELECT *
 FROM amazon
-WHERE quatity > 10;
+WHERE quantity > 10;
 
 SELECT
     category,

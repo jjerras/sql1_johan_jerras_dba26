@@ -1,0 +1,17 @@
+-- concatenation
+SELECT
+    42,
+    'Hej DBA26' AS greeting,
+    'SQL' || ' is the language of relational databases' || ' :) ' AS concatenation,
+    CONCAT('HELLO', ' ORACLE') AS concat_func;
+
+-- STRING FUNCTIONS
+SELECT
+    s,
+    UPPER(s),
+    LOWER(s),
+    INITCAP(s),
+    LENGTH(s),    
+FROM (SELECT 'OraCle sQl' AS s);
+
+EXIT

@@ -15,7 +15,7 @@ SELECT
 FROM amazon
 WHERE 
     profit > 190
-
+    
 ORDER BY profit DESC
 ;
 
