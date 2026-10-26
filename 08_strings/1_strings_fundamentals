@@ -7,11 +7,34 @@ SELECT
 
 -- STRING FUNCTIONS
 SELECT
-    s,
+    s AS original,
     UPPER(s),
     LOWER(s),
     INITCAP(s),
-    LENGTH(s),    
+    LENGTH(s)    
 FROM (SELECT 'OraCle sQl' AS s);
+
+SELECT
+    s,
+    SUBSTR(s, 1,6) AS first_six,
+    SUBSTR(s, 7) AS from_seven,
+    SUBSTR(s, -4) AS last_four
+FROM (SELECT 'Oracle SQL on Oracle26ai' AS s);
+
+-- INSTR -- searching
+SELECT
+    INSTR('idempotent operation', 'operation') AS first_occurrence,
+    INSTR('banana', 'an', 1,2) AS second_occurrence,
+    SUBSTR('cool@evilcorp.com', INSTR('cool@evilcorp.com', '@') + 1) AS domain;
+
+-- clean a string
+SELECT 
+    s,
+    TRIM(s),
+    LTRIM(s),
+    RTRIM(s),
+    RTRIM(INITCAP(REPLACE(TRIM(s), '    ', ' ')), 'x') AS cleaned
+FROM (SELECT '         HellU    ORaCleX      ' AS s);
+
 
 EXIT
